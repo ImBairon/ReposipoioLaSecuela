@@ -1,5 +1,6 @@
 #libreria
 import math
+"""
 #Adquirir Informacion 
 a = int(input("Digite el numero 1:"))
 print(f"El numero a es: {a}")
@@ -21,3 +22,6 @@ print(F"El resultado de la potencia es: {g}")
 print(F"El resultado de la Raiz es: {h}")       
 
 print("Hola")
+"""
+r = ((15/3)*(7+(68-15*33+((45**2)/5)/3)/2)+19)
+print(float(r))
