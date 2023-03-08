@@ -2,7 +2,7 @@ import random
 
 #Estructura
 
-for control in range (0,10,2):
+"""for control in range (0,10,2):
     print(control)
 #lista
 
@@ -39,10 +39,21 @@ print(lista)
 #Remove
 
 lista.remove("Unisangil")
-print(lista)
+print(lista)"""
 
 contador = 0
-#Lista de 100 datos
+#Generar datos aleatorios con funcion
 
-lista_aleatoria = [random.randint(0,100)for i in range(100)]
+lista_aleatoria = [random.randint(1,11)for i in range(12)]
 print(lista_aleatoria)
+
+#Ordenar lista
+lista_aleatoria.sort()#Ascendente 
+print(lista_aleatoria)
+
+lista_aleatoria.sort(reverse=True)#Descendente 
+print(lista_aleatoria)
+
+#Elimina lista repetidos
+lista_f = list(set(lista_aleatoria))
+
