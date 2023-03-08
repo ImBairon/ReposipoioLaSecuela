@@ -1,5 +1,7 @@
 import random
-
+from time import time
+#tiempo inicial
+tiempo_inicial = time()
 #Estructura
 
 """for control in range (0,10,2):
@@ -56,4 +58,8 @@ print(lista_aleatoria)
 
 #Elimina lista repetidos
 lista_f = list(set(lista_aleatoria))
+tiempo_final = time()
 
+#Calculo de tiempo
+tiempo_total = tiempo_final-tiempo_inicial
+print(tiempo_total*1000)
