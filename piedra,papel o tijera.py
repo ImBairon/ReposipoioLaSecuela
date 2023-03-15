@@ -1,43 +1,50 @@
-#importar libreria
+#Importar libreria
 import random
-#opciones
-op =("Piedra","Papel","Tijera")
-#Estructura While
-while True:
-    #entradas
-    usuario = input("Digite la opción piedra, papel o tijera:  ")
+#Opciones
+contador1=int(input("cuantas rondas quieres jugar: "))
+op = ("Piedra","Papel","Tijera")
+contador=1
+puntuacion_usuario=0
+puntuacion_cpu=0
+while contador<=contador1:
+    #Entradas
+    contador += 1
+    usuario = input("Digite la opción Pierdra, Papel o Tijera:  ")
     cpu = random.choice(op)
     #Imprimir informacion
-    print(f"la opción que digito el usuario es {usuario}")
-    print(f"la opcion de la cpu es : {cpu}")
+    print(f"La op que digito el usuario es: {usuario}")
+    print(f"La op CPU es: {cpu}")
     #Proceso
-    #empate
-    if usuario == "piedra" and cpu == "piedra":
-        print("Empate")
+    if usuario == "Piedra" and cpu == "Piedra":
+        print("Empate!!!")
     elif usuario == "Tijera" and cpu == "Tijera":
-        print("Empate")
+        print("Empate!!!")
     elif usuario == "Papel" and cpu == "Papel":
-        print("Empate")
-    #gana usuario
+        print("Empate!!!")
+    elif usuario == "Piedra" and cpu == "Papel":
+        print("Gana cpu!!!")
+        puntuacion_cpu +=1
     elif usuario == "Piedra" and cpu == "Tijera":
-        print("Gana usuario")
+        print("Gana usuario!!!")
+        puntuacion_usuario +=1
     elif usuario == "Papel" and cpu == "Piedra":
-        print("Gana usuario")
-    elif usuario == "Tijera" and cpu == "Papel":
-        print("Gana usuario")
+        print("Gana usuario!!!")
+        puntuacion_usuario +=1
     elif usuario == "Papel" and cpu == "Tijera":
-        print("Gana cpu")
-
-    #gana cpu
-    elif cpu == "Piedra" and usuario == "Tijera":
-        print("Gana cpu")
-    elif cpu == "Papel" and usuario == "Piedra":
-        print("Gana cpu")
-    elif cpu == "Tijera" and usuario == "Papel":
-        print("Gana cpu")
-    elif cpu == "Papel" and usuario == "Tijera":
-        print("Gana usuario")
-
+        print("Gana cpu!!!")
+        puntuacion_cpu +=1
+    elif usuario == "Tijera" and cpu == "Piedra":
+        print("Gana cpu!!!")
+        puntuacion_cpu +=1
+    elif usuario == "Tijera" and cpu == "Papel":
+        print("Gana usuario!!!")
+        puntuacion_usuario +=1
     else:
-        print("Error :v")
-
+        print("Error!!!")
+        contador -=1
+if puntuacion_usuario>puntuacion_cpu:
+    print(f"gana el usuario con {puntuacion_usuario} puntos y perdio la cpu con {puntuacion_cpu} puntos")
+elif puntuacion_usuario<puntuacion_cpu:
+    print(f"gana la cpu con {puntuacion_cpu} puntos y perdiste con {puntuacion_usuario} puntos")
+elif puntuacion_cpu==puntuacion_usuario:
+    print(f"fue un empate la cpu gano {puntuacion_cpu} y tu ganaste {puntuacion_usuario} ¨")
